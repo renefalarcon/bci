@@ -165,7 +165,7 @@ mvn test
 ## Docker
 **Construir imagen**
 ```bash
-docker build -t miapp-java:1.0 .
+docker build -t users-api:1.0 .
 ```
 
 **Ejecutar contenedor**
