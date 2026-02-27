@@ -178,7 +178,42 @@ docker ps               # listar contenedores activos
 docker images           # listar imágenes locales
 docker rm <container>   # eliminar contenedor
 docker rmi <image>      # eliminar imagen
-``` 
+```
+---
+## Docker Compose
+**Construir y ejecutar la aplicacion**
+- Desde la raíz del proyecto, ejecutar:
+```bash
+docker compose up --build
+```
+**Esto realizará:**
+- Construcción de la imagen Docker (bci-rene:1.0)
+- Ejecución de la aplicación Spring Boot
+- Exposición del servicio en http://localhost:8080
+
+**Archivo docker-compose.yml**
+```
+version: "3.9"
+services:
+  app:
+    build: .
+    image: bci-rene:1.0
+    ports:
+      - "8080:8080"
+```
+**Detener la aplicación**
+```bash
+docker compose down
+```
+**Notas**
+- La imagen se construye automáticamente desde el Dockerfile.
+- La aplicación se ejecuta usando Java 17.
+- > ℹ️ En versiones recientes de Docker, Docker Compose se ejecuta como `docker compose`.
+
+**Verificar que lo tienes instalado**
+```bash
+docker compose version
+```
 ---
 # Kubernetes
 ## Manifiestos

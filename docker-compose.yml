@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    image: bci-rene:1.0
+    ports:
+      - "8080:8080"
